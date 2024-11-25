@@ -14,8 +14,8 @@
  *
  * <Add Extended Description Here>
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author NIADA WEND YAM ELLA FLORE
+ * @date 25/11/2024
  *
  */
 
@@ -41,3 +41,37 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+void print_statistics()
+{
+
+}
+
+void print_array(unsigned char*, int)
+{
+
+}
+
+unsigned char find_median(unsigned char*, int)
+{
+
+}
+
+unsigned char find_mean(unsigned char*, int)
+{
+
+} 
+
+unsigned char find_maximum(unsigned char*, int)
+{
+
+}
+
+unsigned char find_minimum(unsigned char*,int)
+{
+
+}
+
+void sort_array(unsigned char*, int)
+{
+
+}
