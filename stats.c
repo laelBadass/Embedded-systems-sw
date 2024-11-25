@@ -46,31 +46,34 @@ void main() {
   print_statistics(max, min, med, mea);
   sort_array(test, SIZE);
   print_array(test, SIZE);
-
+  printf("DONE");
 }
 
 /* Add other Implementation File Code Here */
 void print_statistics(unsigned char max, unsigned char min, unsigned char med, unsigned char mea)
 {
-  printf("The maximum value in this array is %c \n", max);
-  printf("The minimum value in this array is %c \n", min);
-  printf("The mean value in this array is %c \n", mea);
-  printf("The median value in this array is %c \n", med);
+  printf("The maximum value in this array is %u \n", max);
+  printf("The minimum value in this array is %u \n", min);
+  printf("The mean value in this array is %u \n", mea);
+  printf("The median value in this array is %u \n", med);
 }
 
 void print_array(unsigned char* _array, int _size) 
 {
+  printf("\n");
+  int i;
   for(i=0; i<_size; i++)
   {
-    printf("%c /t",*(_array+i));  
+    printf("%u \t",*(_array+i));  
   }
+  printf("\n");
 }
 
 unsigned char find_median(unsigned char* _array, int _size)
 {
   sort_array(_array, _size);
   if(_size%2==0)
-    return((_array[_size/2 -1] + (_array[_size/2])/2);
+    return((_array[_size/2 -1] + (_array[_size/2])/2));
   else
     return(_array[_size/2]);
 }
@@ -82,7 +85,7 @@ unsigned char find_mean(unsigned char* _array, int _size)
   {
     sum+=*p;
   }
-  return (sum/_size)
+  return (sum/_size);
 } 
 
 unsigned char find_maximum(unsigned char* _array, int _size)
@@ -119,7 +122,7 @@ void sort_array(unsigned char* _array, int _size)
     {
       if(*(_array+j)< *(_array+i))
       {
-        p = *(array+i);
+        p = *(_array+i);
         *(_array+i) = *(_array+j);
         *(_array+j) = p;
       }

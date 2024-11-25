@@ -22,7 +22,7 @@
 #define __STATS_H__
 
 /* Add Your Declarations and Function Comments here */ 
-void print_statistics();
+void print_statistics(unsigned char, unsigned char, unsigned char, unsigned char);
 void print_array(unsigned char*, int);
 unsigned char find_median(unsigned char*, int);
 unsigned char find_mean(unsigned char*, int);
