@@ -36,42 +36,94 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+  unsigned char max, min, med, mea;
   /* Statistics and Printing Functions Go Here */
+  print_array(test, SIZE);
+  max = find_maximum(test,SIZE);
+  min = find_minimum(test,SIZE);
+  mea = find_mean(test,SIZE);
+  med = find_median(test, SIZE);
+  print_statistics(max, min, med, mea);
+  sort_array(test, SIZE);
+  print_array(test, SIZE);
 
 }
 
 /* Add other Implementation File Code Here */
-void print_statistics()
+void print_statistics(unsigned char max, unsigned char min, unsigned char med, unsigned char mea)
 {
-
+  printf("The maximum value in this array is %c \n", max);
+  printf("The minimum value in this array is %c \n", min);
+  printf("The mean value in this array is %c \n", mea);
+  printf("The median value in this array is %c \n", med);
 }
 
-void print_array(unsigned char*, int)
+void print_array(unsigned char* _array, int _size) 
 {
-
+  for(i=0; i<_size; i++)
+  {
+    printf("%c /t",*(_array+i));  
+  }
 }
 
-unsigned char find_median(unsigned char*, int)
+unsigned char find_median(unsigned char* _array, int _size)
 {
-
+  sort_array(_array, _size);
+  if(_size%2==0)
+    return((_array[_size/2 -1] + (_array[_size/2])/2);
+  else
+    return(_array[_size/2]);
 }
 
-unsigned char find_mean(unsigned char*, int)
+unsigned char find_mean(unsigned char* _array, int _size)
 {
-
+  unsigned char *p, sum = 0;
+  for(p=_array;p<_array+_size;p++)
+  {
+    sum+=*p;
+  }
+  return (sum/_size)
 } 
 
-unsigned char find_maximum(unsigned char*, int)
+unsigned char find_maximum(unsigned char* _array, int _size)
 {
-
+  unsigned char *p, maxi;
+  maxi = *_array;
+  for(p=_array+1; p<_array+_size; p++)
+  {
+    if(maxi<=*p)
+      maxi = *p;
+  }
+  return maxi;
 }
 
-unsigned char find_minimum(unsigned char*,int)
+unsigned char find_minimum(unsigned char* _array,int _size)
 {
-
+  unsigned char *p, mini;
+  mini = *_array;
+  for(p=_array+1; p<_array+_size; p++)
+  {
+    if(mini>=*p)
+      mini = *p;
+  }
+  return mini;
 }
 
-void sort_array(unsigned char*, int)
+void sort_array(unsigned char* _array, int _size)
 {
-
+  int i,j;
+  unsigned char p;
+  for(i=0;i<_size;i++)
+  {
+    for(j=i+1;j<_size;j++)
+    {
+      if(*(_array+j)< *(_array+i))
+      {
+        p = *(array+i);
+        *(_array+i) = *(_array+j);
+        *(_array+j) = p;
+      }
+    }
+  }
+        
 }
